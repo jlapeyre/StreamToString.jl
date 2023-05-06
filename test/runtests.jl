@@ -1,6 +1,12 @@
 using StreamToString
 using Test
 
+include("aqua_test.jl")
+
+if VERSION >= v"1.7"
+    include("jet_test.jl")
+end
+
 @testset "StreamToString.jl" begin
     str = stdout_string() do
         print("hi")
